@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
 
 class HomeDrower extends StatelessWidget {
-  double height;
-  double width;
-  void Function(DrowerItems) onItemSelected;
-  HomeDrower(
-      {required this.height,
+  final double height;
+  final double width;
+  final void Function(DrowerItems) onItemSelected;
+ const HomeDrower(
+      {super.key, required this.height,
       required this.width,
       required this.onItemSelected});
 

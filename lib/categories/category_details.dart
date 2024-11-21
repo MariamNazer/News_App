@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/models/category_model.dart';
 import 'package:news_app/models/source.dart';
 import 'package:news_app/tabs/sources_tabs.dart';
 
 class CategoryDetails extends StatefulWidget {
-  String catygoryId;
-  CategoryDetails({super.key, required this.catygoryId});
+ final String catygoryId;
+ const CategoryDetails({super.key, required this.catygoryId});
 
   @override
   State<CategoryDetails> createState() => _CategoryDetailsState();
