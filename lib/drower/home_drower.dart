@@ -4,7 +4,11 @@ import 'package:news_app/app_theme.dart';
 class HomeDrower extends StatelessWidget {
   double height;
   double width;
-  HomeDrower({required this.height, required this.width});
+  void Function(DrowerItems) onItemSelected;
+  HomeDrower(
+      {required this.height,
+      required this.width,
+      required this.onItemSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,9 @@ class HomeDrower extends StatelessWidget {
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      onItemSelected(DrowerItems.categories);
+                    },
                     child: Row(
                       children: [
                         const Icon(Icons.menu),
@@ -37,7 +43,7 @@ class HomeDrower extends StatelessWidget {
                           width: width * 0.02,
                         ),
                         Text(
-                          'Catigory',
+                          'Category',
                           style:
                               titleLargeStyle?.copyWith(color: AppTheme.black),
                         )
@@ -48,7 +54,9 @@ class HomeDrower extends StatelessWidget {
                     height: height * 0.02,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      onItemSelected(DrowerItems.settings);
+                    },
                     child: Row(
                       children: [
                         const Icon(Icons.settings),
@@ -72,3 +80,5 @@ class HomeDrower extends StatelessWidget {
     );
   }
 }
+
+enum DrowerItems { categories, settings }
