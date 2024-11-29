@@ -6,26 +6,40 @@ import 'package:news_app/models/category_model.dart';
 class CategoriesGrid extends StatelessWidget {
   final void Function(CategoryModel) onCategorySelected;
 
- const CategoriesGrid({super.key, required this.onCategorySelected});
+  const CategoriesGrid({super.key, required this.onCategorySelected});
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    final categories = List.generate(
-        6,
-        (index) => CategoryModel(
-            id: '$index',
-            name: 'Sports',
-            imageName: 'ball',
-            color: AppTheme.red));
+    List<CategoryModel> categories = [
+      CategoryModel(
+          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
+      CategoryModel(
+          id: 'business',
+          name: 'Bussines',
+          imageName: 'bussines',
+          color: AppTheme.red),
+      CategoryModel(
+          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
+      CategoryModel(
+          id: 'business',
+          name: 'Bussines',
+          imageName: 'bussines',
+          color: AppTheme.red),
+      CategoryModel(
+          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
+      CategoryModel(
+          id: 'business',
+          name: 'Bussines',
+          imageName: 'bussines',
+          color: AppTheme.red),
+    ];
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.08),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: height * 0.02),
+            padding: const EdgeInsets.symmetric(vertical: 24),
             child: Text(
               'Pick your category of interest',
               style: Theme.of(context)
