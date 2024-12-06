@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/news/view/widgets/news_item.dart';
+import 'package:news_app/news/view_model/news_states.dart';
 import 'package:news_app/news/view_model/news_view_model.dart';
 import 'package:news_app/shared/widgets/loading_indecator.dart';
 import 'package:provider/provider.dart';
@@ -18,19 +20,21 @@ class _NewsListState extends State<NewsList> {
   @override
   Widget build(BuildContext context) {
     viewModel.getNews(widget.sourceId);
-    return ChangeNotifierProvider(
+    return BlocProvider(
       create: (_) => viewModel,
-      child: Consumer<NewsViewModel>(
-        builder: (_, viewModel, __) {
-          if (viewModel.isLoding) {
+      child: BlocBuilder<NewsViewModel, NewsStates>(
+        builder: (_, state) {
+          if (state is GetNewsLoading) {
             return const LoadingIndecator();
-          } else if (viewModel.errormessage != null) {
-            return Center(child: Text(viewModel.errormessage!));
-          } else {
+          } else if (state is GetNewsError) {
+            return Center(child: Text(state.errormessage));
+          } else if (state is GetNewsSuccess) {
             return ListView.builder(
-              itemBuilder: (_, index) => NewsItem(viewModel.newsList[index]),
-              itemCount: viewModel.newsList.length,
+              itemBuilder: (_, index) => NewsItem(state.newsList[index]),
+              itemCount: state.newsList.length,
             );
+          } else {
+            return const SizedBox();
           }
         },
       ),
