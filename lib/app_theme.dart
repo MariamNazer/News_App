@@ -7,6 +7,7 @@ class AppTheme {
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey = Color(0xFF79828B);
   static const Color red = Color(0xFFC91C22);
+  static const Color descriptionColor = Color(0xFF42505C);
 
   // ignore: non_constant_identifier_names
   static ThemeData LightTeme = ThemeData(

@@ -28,13 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
               DecorationImage(image: AssetImage('assets/images/pattern.png'))),
       child: Scaffold(
         appBar: AppBar(
-            title: Text(
-          selectedCategory != null
-              ? selectedCategory!.name
-              : selectedDrowerItem == DrowerItems.categories
-                  ? 'News App'
-                  : 'Settings',
-        )),
+          title: Text(
+            selectedCategory != null
+                ? selectedCategory!.name
+                : selectedDrowerItem == DrowerItems.categories
+                    ? 'News App'
+                    : 'Settings',
+          ),
+        ),
         drawer: HomeDrower(
           height: height,
           width: width,
