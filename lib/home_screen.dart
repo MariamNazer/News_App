@@ -6,6 +6,7 @@ import 'package:news_app/drower/home_drower.dart';
 import 'package:news_app/models/category_model.dart';
 import 'package:news_app/search.dart';
 import 'package:news_app/settings/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/home";
@@ -33,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedCategory != null
                 ? selectedCategory!.name
                 : selectedDrowerItem == DrowerItems.categories
-                    ? 'News App'
-                    : 'Settings',
+                    ? AppLocalizations.of(context)!.newsApp
+                    : AppLocalizations.of(context)!.settings,
           ),
           actions: [
             IconButton(

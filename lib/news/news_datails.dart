@@ -5,6 +5,7 @@ import 'package:news_app/models/news_response/news.dart';
 import 'package:news_app/widgets/loading_indecator.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsDetails extends StatelessWidget {
   final News news;
@@ -98,32 +99,29 @@ class NewsDetails extends StatelessWidget {
                                 fontWeight: FontWeight.w300),
                           ),
                           SizedBox(height: height * 0.06),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'View Full Article',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
-                                    ?.copyWith(
-                                        color: AppTheme.descriptionColor,
-                                        fontWeight: FontWeight.w500),
-                              ),
-                              const SizedBox(width: 26),
-                            ],
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional.centerEnd,
-                            child: GestureDetector(
-                              onTap: () async {
-                                await launchUrl(url);
-                              },
-                              child: const Icon(
-                                Icons.arrow_right,
-                                size: 40,
-                                color: AppTheme.black,
-                              ),
+                          GestureDetector(
+                            onTap: () async {
+                              await launchUrl(url);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .view_full_article,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall
+                                      ?.copyWith(
+                                          color: AppTheme.descriptionColor,
+                                          fontWeight: FontWeight.w500),
+                                ),
+                                const Icon(
+                                  Icons.arrow_right,
+                                  size: 40,
+                                  color: AppTheme.black,
+                                ),
+                              ],
                             ),
                           ),
                         ],

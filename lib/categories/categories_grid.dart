@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
 import 'package:news_app/categories/category_item.dart';
 import 'package:news_app/models/category_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoriesGrid extends StatelessWidget {
   final void Function(CategoryModel) onCategorySelected;
@@ -12,30 +13,30 @@ class CategoriesGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
       CategoryModel(
-          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
+          id: 'sports', name: AppLocalizations.of(context)!.sports, imageName: 'ball', color: AppTheme.red),
       CategoryModel(
           id: 'politics',
-          name: 'Politics',
+          name: AppLocalizations.of(context)!.politics,
           imageName: 'Politics',
           color: AppTheme.blue),
       CategoryModel(
           id: 'health',
-          name: 'Health',
+          name: AppLocalizations.of(context)!.health,
           imageName: 'health',
           color: AppTheme.bink),
       CategoryModel(
           id: 'business',
-          name: 'Bussines',
+          name: AppLocalizations.of(context)!.business,
           imageName: 'bussines',
           color: AppTheme.orange),
       CategoryModel(
           id: 'environment',
-          name: 'Environment',
+          name: AppLocalizations.of(context)!.environment,
           imageName: 'environment',
           color: AppTheme.babyBlue),
       CategoryModel(
           id: 'science',
-          name: 'Science',
+          name: AppLocalizations.of(context)!.science,
           imageName: 'science',
           color: AppTheme.yellow),
     ];
@@ -47,7 +48,7 @@ class CategoriesGrid extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 24),
             child: Text(
-              'Pick your category of interest',
+              AppLocalizations.of(context)!.pick,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge

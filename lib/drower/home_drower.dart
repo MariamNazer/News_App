@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeDrower extends StatelessWidget {
   final double height;
@@ -24,7 +25,8 @@ class HomeDrower extends StatelessWidget {
             width: double.infinity,
             height: height * 0.252,
             alignment: Alignment.center,
-            child: Text('News App!', style: titleLargeStyle),
+            child: Text(AppLocalizations.of(context)!.newsApp,
+                style: titleLargeStyle),
           ),
           Expanded(
             child: Container(
@@ -44,7 +46,7 @@ class HomeDrower extends StatelessWidget {
                           width: width * 0.02,
                         ),
                         Text(
-                          'Category',
+                          AppLocalizations.of(context)!.categories,
                           style:
                               titleLargeStyle?.copyWith(color: AppTheme.black),
                         )
@@ -65,7 +67,7 @@ class HomeDrower extends StatelessWidget {
                           width: width * 0.02,
                         ),
                         Text(
-                          'Settings',
+                          AppLocalizations.of(context)!.settings,
                           style:
                               titleLargeStyle?.copyWith(color: AppTheme.black),
                         )

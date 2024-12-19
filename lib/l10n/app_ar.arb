@@ -1,0 +1,15 @@
+{
+    "newsApp": "الاخبار",
+    "pick": "اختر الفئة المهتم بها",
+    "categories": "الفئات",
+    "settings": "الاعدادات",
+    "newsTitle": "تفاصيل الخبر",
+    "language": "اللغة",
+    "sports" :"الرياضة",
+    "health" :"الصحة",
+    "politics":"السياسة",
+    "business":"الأعمال التجارية",
+    "environment":"البيئة",
+    "science":"العلوم",
+    "view_full_article":"عرض المقال كاملا"
+}
