@@ -19,6 +19,8 @@ class NewsApp extends StatelessWidget {
         },
         initialRoute: HomeScreen.routeName,
         theme: AppTheme.LightTeme,
-        themeMode: ThemeMode.light);
+        themeMode: ThemeMode.light,
+        );
+        
   }
 }

@@ -5,7 +5,10 @@ import 'package:news_app/tabs/tab_item.dart';
 
 class SourcesTabs extends StatefulWidget {
   final List<Source> source;
-  const SourcesTabs(this.source,{super.key, });
+  const SourcesTabs(
+    this.source, {
+    super.key,
+  });
 
   @override
   State<SourcesTabs> createState() => _SourcesTabsState();
@@ -30,7 +33,7 @@ class _SourcesTabsState extends State<SourcesTabs> {
                 tabAlignment: TabAlignment.start,
                 tabs: widget.source
                     .map((source) => TabItem(
-                          sourceName: source.name??'',
+                          sourceName: source.name ?? '',
                           isSelected:
                               widget.source.indexOf(source) == selectedIndex
                                   ? true

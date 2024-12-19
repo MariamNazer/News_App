@@ -14,24 +14,30 @@ class CategoriesGrid extends StatelessWidget {
       CategoryModel(
           id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
       CategoryModel(
-          id: 'business',
-          name: 'Bussines',
-          imageName: 'bussines',
-          color: AppTheme.red),
+          id: 'politics',
+          name: 'Politics',
+          imageName: 'Politics',
+          color: AppTheme.blue),
       CategoryModel(
-          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
-      CategoryModel(
-          id: 'business',
-          name: 'Bussines',
-          imageName: 'bussines',
-          color: AppTheme.red),
-      CategoryModel(
-          id: 'sports', name: 'Sports', imageName: 'ball', color: AppTheme.red),
+          id: 'health',
+          name: 'Health',
+          imageName: 'health',
+          color: AppTheme.bink),
       CategoryModel(
           id: 'business',
           name: 'Bussines',
           imageName: 'bussines',
-          color: AppTheme.red),
+          color: AppTheme.orange),
+      CategoryModel(
+          id: 'environment',
+          name: 'Environment',
+          imageName: 'environment',
+          color: AppTheme.babyBlue),
+      CategoryModel(
+          id: 'science',
+          name: 'Science',
+          imageName: 'science',
+          color: AppTheme.yellow),
     ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),

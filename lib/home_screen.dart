@@ -4,6 +4,7 @@ import 'package:news_app/categories/categories_grid.dart';
 import 'package:news_app/categories/category_details.dart';
 import 'package:news_app/drower/home_drower.dart';
 import 'package:news_app/models/category_model.dart';
+import 'package:news_app/search.dart';
 import 'package:news_app/settings/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,6 +36,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     ? 'News App'
                     : 'Settings',
           ),
+          actions: [
+            IconButton(
+              onPressed: () async {
+                // عند الضغط على أيقونة البحث
+                showSearch(
+                  context: context,
+                  delegate: Search(), // استدعاء دالة البحث
+                );
+              },
+              icon: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Icon(Icons.search, color: AppTheme.white, size: 36),
+              ),
+            )
+          ],
         ),
         drawer: HomeDrower(
           height: height,
@@ -47,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? CategoriesGrid(
                     onCategorySelected: onCategorySelected,
                   )
-                : const SettingsTab(),
+                :  const SettingsTab(),
       ),
     );
   }

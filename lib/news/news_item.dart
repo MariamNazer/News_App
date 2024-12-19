@@ -20,13 +20,14 @@ class NewsItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => NewsDatails(news),
+            builder: (context) => NewsDetails(news),
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
+              borderRadius: BorderRadius.circular(5),
               child: CachedNetworkImage(
                 imageUrl: news.urlToImage ??
                     'https://thumbs.dreamstime.com/b/image-not-available-icon-set-default-missing-photo-stock-vector-symbol-black-filled-outlined-style-no-found-white-332183016.jpg',
