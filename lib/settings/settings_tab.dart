@@ -40,10 +40,10 @@ class _SettingsTabState extends State<SettingsTab> {
             height: 17,
           ),
           Container(
-            margin: const EdgeInsets.only(left: 18),
-            padding: const EdgeInsets.all(17),
+            margin: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.all(12),
             width: width * 0.7,
-            height: height * 0.067,
+            height: height * 0.072,
             decoration: BoxDecoration(
                 border: Border.all(color: AppTheme.primary),
                 color: AppTheme.white),
@@ -58,7 +58,7 @@ class _SettingsTabState extends State<SettingsTab> {
                             language.name,
                             style: Theme.of(context)
                                 .textTheme
-                                .titleMedium!
+                                .titleSmall!
                                 .copyWith(color: AppTheme.primary),
                           )))
                       .toList(),
